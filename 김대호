@@ -1,0 +1,15 @@
+hours,minutes =map(int,input().split()) #시간 분
+c= int(input())                     #추가 시간
+empty_hour=c//60                    #추가 시간의 시에 해당하는 부분    
+empty_minute=c%60                   #추가 시간이 분에 해당하는 부분
+
+hours=hours+empty_hour          #시간+시간      
+minutes=minutes+empty_minute    #분+분
+
+if minutes>=60:                #여기서 60이 넘을 수 있음도(120은 안넘음)
+  hours+=1                    #시간 1 추가
+  minutes%=60                 #분   
+if hours>=24:                 #24시가 넘을 경우
+  hours%=24
+  
+print(hours,minutes)
